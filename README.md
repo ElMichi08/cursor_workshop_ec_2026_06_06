@@ -24,7 +24,10 @@ For live auth, markets, trading, and image uploads, create a Supabase project, a
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_PROJECT_REF=
 ```
+
+The `NEXT_PUBLIC_*` values are used by the app. `SUPABASE_PROJECT_REF` is only for Supabase CLI scripts such as linking the hosted project and generating types.
 
 For workshop speed, disable email confirmations in Supabase Auth settings.
 
@@ -44,3 +47,4 @@ Open [http://localhost:3000](http://localhost:3000).
 - `bun run test:run` - run unit tests.
 - `bun run e2e` - run the Playwright smoke test.
 - `bun run db:start` / `bun run db:stop` / `bun run db:reset` - manage the local Supabase stack.
+- `bun run db:link` / `bun run db:push` / `bun run db:types` - work with the hosted Supabase project.
