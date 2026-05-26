@@ -26,6 +26,16 @@ task setup
 task hooks:install
 ```
 
+Create a hosted Supabase project for the workshop. In the Supabase dashboard, copy the project URL, anon key, and project ref into `.env.local`:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_PROJECT_REF=
+```
+
+For workshop speed, go to **Authentication > Sign In / Providers > Email** and turn off **Confirm email**.
+
 Start the app and open [http://localhost:3000](http://localhost:3000):
 
 ```bash
@@ -33,6 +43,31 @@ task dev
 ```
 
 You should see the MarketLab workshop start screen.
+
+## Workshop Build
+
+Workshop prompts live on the `prompts` branch. Use that branch when you are ready to run the Supabase MCP build prompt for Auth, Database, Storage, RLS, RPC, and Server Actions.
+
+If the Supabase CLI asks you to authenticate first, run:
+
+```bash
+task db:login
+```
+
+After the prompt creates the Supabase artifacts, link the repo and apply the generated migrations and seed data:
+
+```bash
+task db:link
+task db:push
+task db:types
+```
+
+Verify the finished workshop app:
+
+```bash
+task verify
+task e2e
+```
 
 ## Commands
 
