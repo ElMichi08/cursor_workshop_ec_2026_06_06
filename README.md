@@ -11,7 +11,11 @@ MarketLab is a Cursor workshop starter for building a fake-money prediction mark
 
 ## Prerequisites
 
-Install `mise` before starting: [Installing Mise](https://mise.jdx.dev/installing-mise.html).
+Before starting, make sure you have:
+
+- A Supabase account
+- A hosted Supabase project for this workshop
+- `mise` installed: [Installing Mise](https://mise.jdx.dev/installing-mise.html)
 
 This project uses `mise` to install the pinned workshop tools. Task is the workshop command runner; see the official [Task docs](https://taskfile.dev/docs/installation) for reference, but you do not need to install it separately when using `mise`.
 
@@ -26,7 +30,7 @@ task setup
 task hooks:install
 ```
 
-Create a hosted Supabase project for the workshop. In the Supabase dashboard, copy the project URL, anon key, and project ref into `.env.local`:
+In your Supabase project dashboard, copy the project URL, anon key, and project ref into `.env.local`:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=
@@ -34,7 +38,17 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_PROJECT_REF=
 ```
 
+You can find the URL and anon key under **Project Settings > API**. The project ref is the short project id in your Supabase project URL.
+
 For workshop speed, go to **Authentication > Sign In / Providers > Email** and turn off **Confirm email**.
+
+Authenticate the Supabase CLI, link this repo to your hosted project, and generate local TypeScript types:
+
+```bash
+task db:login
+task db:link
+task db:types
+```
 
 Start the app and open [http://localhost:3000](http://localhost:3000):
 
@@ -44,25 +58,7 @@ task dev
 
 You should see the MarketLab workshop start screen.
 
-## Workshop Build
-
-Workshop prompts live on the `prompts` branch. Use that branch when you are ready to run the Supabase MCP build prompt for Auth, Database, Storage, RLS, RPC, and Server Actions.
-
-If the Supabase CLI asks you to authenticate first, run:
-
-```bash
-task db:login
-```
-
-After the prompt creates the Supabase artifacts, link the repo and apply the generated migrations and seed data:
-
-```bash
-task db:link
-task db:push
-task db:types
-```
-
-Verify the finished workshop app:
+## Verify
 
 ```bash
 task verify
