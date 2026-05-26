@@ -68,7 +68,7 @@ tasks:
       - bun run db:link
 
   db:push:
-    desc: Apply migrations and seed demo markets.
+    desc: Apply generated Supabase migrations and seed data.
     cmds:
       - bun run db:push
 

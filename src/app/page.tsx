@@ -1,57 +1,42 @@
-import { AuthPanel } from "@/components/marketlab/auth-panel";
-import { ConfigCallout } from "@/components/marketlab/config-callout";
-import { CreateMarketForm } from "@/components/marketlab/create-market-form";
+import Image from "next/image";
+
 import { Header } from "@/components/marketlab/header";
-import { MarketCard } from "@/components/marketlab/market-card";
-import { Notice } from "@/components/marketlab/notice";
-import { PortfolioSummary } from "@/components/marketlab/portfolio-summary";
-import { getHomeData } from "@/lib/data";
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ notice?: string }>;
-}) {
-  const [{ notice }, data] = await Promise.all([searchParams, getHomeData()]);
-  const signedIn = Boolean(data.viewer);
-
+export default function Home() {
   return (
-    <div className="min-h-svh bg-zinc-50 text-zinc-950">
-      <Header configured={data.configured} viewer={data.viewer} />
-      <Notice message={notice} />
-      <ConfigCallout configured={data.configured} />
+    <div className="min-h-svh bg-[#080a0d] text-white">
+      <Header />
 
-      <main className="mx-auto grid max-w-6xl gap-8 px-4 py-8 lg:grid-cols-[1fr_22rem]">
-        <section className="min-w-0">
-          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-emerald-700">
-                Live markets
-              </p>
-              <h1 className="mt-2 text-4xl font-semibold tracking-tight">
-                Trade the workshop outcome.
-              </h1>
+      <main className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#080a0d_0%,#10151d_54%,#08120f_100%)]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00d395]/60 to-transparent" />
+
+        <section className="relative mx-auto flex min-h-[calc(100svh-6.5rem)] max-w-6xl items-center justify-center px-4 py-14 text-center">
+          <div className="mx-auto max-w-4xl animate-in fade-in slide-in-from-bottom-5 duration-700">
+            <div className="mx-auto mb-8 w-44 overflow-hidden rounded-[1.75rem] border border-white/10 bg-zinc-900 shadow-2xl shadow-[#00d395]/15 sm:w-56">
+              <Image
+                alt="Cursor Quito event mark"
+                className="h-auto w-full"
+                height={1080}
+                priority
+                src="/quito.png"
+                width={1080}
+              />
             </div>
-            <p className="max-w-md text-sm leading-6 text-zinc-600">
-              A compact prediction market that demonstrates Supabase Auth,
-              Database, Storage, RLS, Server Actions, and Cursor workflows.
+
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#00d395]">
+              Cursor Workshop / Quito
+            </p>
+            <h1 className="mx-auto mt-4 max-w-3xl text-5xl font-semibold leading-[0.98] tracking-tight sm:text-7xl">
+              MarketLab is ready.
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
+              Welcome to the Cursor workshop in Quito. Your local setup is
+              running, and we will build the prediction market from here.
             </p>
           </div>
-
-          <div className="grid gap-4">
-            {data.markets.map((market) => (
-              <MarketCard key={market.id} market={market} />
-            ))}
-          </div>
         </section>
-
-        <aside className="grid content-start gap-4">
-          <PortfolioSummary viewer={data.viewer} />
-          <CreateMarketForm enabled={data.configured && signedIn} />
-        </aside>
       </main>
-
-      {!signedIn ? <AuthPanel configured={data.configured} /> : null}
     </div>
   );
 }
