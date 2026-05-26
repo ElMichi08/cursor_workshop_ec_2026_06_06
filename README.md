@@ -18,7 +18,7 @@ Before starting, make sure you have:
 - A hosted Supabase project for this workshop
 - `mise` installed: [Installing Mise](https://mise.jdx.dev/installing-mise.html)
 
-This project uses `mise` to install the pinned workshop tools. Task is the workshop command runner; see the official [Task docs](https://taskfile.dev/docs/installation) for reference, but you do not need to install it separately when using `mise`.
+This project uses `mise` to install the pinned workshop tools.
 
 ## Setup
 
