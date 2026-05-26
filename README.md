@@ -1,6 +1,6 @@
 # MarketLab
 
-MarketLab is a Cursor workshop starter for building a fake-money prediction market with Next.js, Tailwind CSS, shadcn-style primitives, and hosted Supabase.
+MarketLab is a Cursor workshop starter for building a fake-money prediction market.
 
 ## Stack
 
