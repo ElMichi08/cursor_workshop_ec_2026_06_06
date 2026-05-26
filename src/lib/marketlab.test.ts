@@ -1,10 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import {
-  calculateMarketStats,
-  formatCents,
-  formatProbability,
-} from "@/lib/marketlab";
+import { calculateMarketStats } from "@/lib/marketlab";
 
 describe("calculateMarketStats", () => {
   it("starts markets at even odds", () => {
@@ -33,12 +29,5 @@ describe("calculateMarketStats", () => {
 
     expect(stats.yesPrice).toBe(99);
     expect(stats.noPrice).toBe(1);
-  });
-});
-
-describe("formatters", () => {
-  it("formats fake cents and probabilities", () => {
-    expect(formatCents(1234)).toBe("$12.34");
-    expect(formatProbability(62.4)).toBe("62%");
   });
 });

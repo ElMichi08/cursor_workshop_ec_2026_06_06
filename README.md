@@ -2,8 +2,6 @@
 
 MarketLab is a Cursor workshop starter: a fake-money prediction market UI built with Next.js, Tailwind CSS, shadcn-style primitives, and hosted Supabase.
 
-The repo intentionally starts with static fictional markets and no committed database schema or seed SQL. During the workshop, use the prompt in `prompts/01-build-marketlab.md` with Supabase MCP to generate auth, tables, storage, RLS, RPC functions, and seed data.
-
 ## Stack
 
 - Next.js App Router, React, TypeScript

@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("renders the MarketLab workspace", async ({ page }) => {
+test("browses the static MarketLab starter", async ({ page }) => {
   await page.goto("/");
 
   await expect(
@@ -10,10 +10,7 @@ test("renders the MarketLab workspace", async ({ page }) => {
   await expect(
     page.getByRole("link", { name: /open market/i }).first(),
   ).toBeVisible();
-});
 
-test("opens a read-only market detail page", async ({ page }) => {
-  await page.goto("/");
   await Promise.all([
     page.waitForURL(/\/markets\/demo-1$/),
     page
