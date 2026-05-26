@@ -47,21 +47,6 @@ tasks:
     cmds:
       - bun run typecheck
 
-  test:
-    desc: Run unit tests in watch mode.
-    cmds:
-      - bun run test
-
-  test:run:
-    desc: Run unit tests once.
-    cmds:
-      - bun run test:run
-
-  test:watch:
-    desc: Run unit tests in watch mode.
-    cmds:
-      - bun run test
-
   e2e:
     desc: Run the Playwright smoke test.
     cmds:
@@ -93,8 +78,7 @@ tasks:
       - bun run db:types
 
   verify:
-    desc: Run checks, typecheck, and unit tests.
+    desc: Run checks and typecheck.
     cmds:
       - task: check
       - task: typecheck
-      - task: test:run

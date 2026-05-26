@@ -1,13 +1,13 @@
 # MarketLab
 
-MarketLab is a Cursor workshop starter for building a fake-money prediction market with Next.js, Tailwind CSS, shadcn-style primitives, and hosted Supabase.
+MarketLab is a Cursor workshop starter for building a fake-money prediction market with Next.js, Tailwind CSS, and hosted Supabase.
 
 ## Stack
 
 - Next.js App Router, React, TypeScript
-- Tailwind CSS and shadcn-style UI primitives
+- Tailwind CSS
 - Supabase Auth, Postgres, Storage, RLS, and RPC
-- Zod, Vitest, Playwright, Biome, Bun
+- Playwright, Biome, Bun
 
 ## Prerequisites
 
@@ -26,16 +26,6 @@ task setup
 task hooks:install
 ```
 
-Create a hosted Supabase project for the workshop. In the Supabase dashboard, copy the project URL, anon key, and project ref into `.env.local`:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_PROJECT_REF=
-```
-
-For workshop speed, go to **Authentication > Sign In / Providers > Email** and turn off **Confirm email**.
-
 Start the app and open [http://localhost:3000](http://localhost:3000):
 
 ```bash
@@ -47,6 +37,16 @@ You should see the MarketLab workshop start screen.
 ## Workshop Build
 
 Workshop prompts live on the `prompts` branch. Use that branch when you are ready to run the Supabase MCP build prompt for Auth, Database, Storage, RLS, RPC, and Server Actions.
+
+Create a hosted Supabase project for the workshop. In the Supabase dashboard, copy the project URL, anon key, and project ref into `.env.local`:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_PROJECT_REF=
+```
+
+For workshop speed, go to **Authentication > Sign In / Providers > Email** and turn off **Confirm email**.
 
 If the Supabase CLI asks you to authenticate first, run:
 
