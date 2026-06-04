@@ -134,6 +134,30 @@ checksum = "sha256:6b571c5100ebbaf868dc3c209f39ceb4ec16d6f1f297ee9fbdde013fc8b77
 url = "https://github.com/j178/prek/releases/download/v0.4.2/prek-x86_64-pc-windows-msvc.zip"
 provenance = "github-attestations"
 
+[[tools.supabase]]
+version = "2.104.0"
+backend = "aqua:supabase/cli"
+
+[tools.supabase."platforms.linux-arm64"]
+checksum = "sha256:29b2ad78e5da29c0f8ad424a720dbda568e9d7458f3810696710b23ca42cba4f"
+url = "https://github.com/supabase/cli/releases/download/v2.104.0/supabase_linux_arm64.tar.gz"
+
+[tools.supabase."platforms.linux-x64"]
+checksum = "sha256:5a0d3ed4c44f8dd1520a9f7ed6309aa60ef3bfc6c5483c9b11f70191f9d74cf6"
+url = "https://github.com/supabase/cli/releases/download/v2.104.0/supabase_linux_amd64.tar.gz"
+
+[tools.supabase."platforms.macos-arm64"]
+checksum = "sha256:56730e9867651816965ce49927c8abd1236b629fa7e110c8c00a09e6b7cb05f6"
+url = "https://github.com/supabase/cli/releases/download/v2.104.0/supabase_darwin_arm64.tar.gz"
+
+[tools.supabase."platforms.macos-x64"]
+checksum = "sha256:bf70260aff2359222729c18a07b5bbd2d801aebf7989cd08055d4d361c9cb876"
+url = "https://github.com/supabase/cli/releases/download/v2.104.0/supabase_darwin_amd64.tar.gz"
+
+[tools.supabase."platforms.windows-x64"]
+checksum = "sha256:5bfdd9b13382268bc85812f3f1dc7cf1186d2f90639af04bda47016f02788c37"
+url = "https://github.com/supabase/cli/releases/download/v2.104.0/supabase_windows_amd64.tar.gz"
+
 [[tools.task]]
 version = "3.50.0"
 backend = "aqua:go-task/task"

@@ -17,10 +17,7 @@
     "check": "biome check .",
     "check:write": "biome check --write .",
     "test": "vitest",
-    "test:run": "vitest run",
-    "db:link": "supabase link --project-ref $SUPABASE_PROJECT_REF",
-    "db:push": "supabase db push --include-seed",
-    "db:types": "mkdir -p src/lib/supabase && supabase gen types typescript --project-id $SUPABASE_PROJECT_REF > src/lib/supabase/database.types.ts"
+    "test:run": "vitest run"
   },
   "dependencies": {
     "@supabase/ssr": "0.10.3",
@@ -43,7 +40,6 @@
     "@types/react": "19.2.16",
     "@types/react-dom": "19.2.3",
     "shadcn": "4.10.0",
-    "supabase": "2.104.0",
     "tailwindcss": "4.3.0",
     "typescript": "6.0.3",
     "vitest": "4.1.8"
@@ -58,7 +54,6 @@
     "msw",
     "protobufjs",
     "sharp",
-    "supabase",
     "unrs-resolver"
   ]
 }

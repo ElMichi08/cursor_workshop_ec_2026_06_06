@@ -4,8 +4,8 @@ silent: true
 
 vars:
   BUN: bun
-  BUNX: bunx
   PREK: mise exec -- prek
+  SUPABASE: mise exec -- supabase
 
 tasks:
   setup:
@@ -73,22 +73,24 @@ tasks:
   db:login:
     desc: Authenticate the Supabase CLI.
     cmds:
-      - "{{.BUNX}} supabase login"
+      - "{{.SUPABASE}} login"
 
   db:link:
     desc: Link this repo to the hosted Supabase project.
     cmds:
-      - "{{.BUN}} run db:link"
+      - '{{.SUPABASE}} link --project-ref "{{.SUPABASE_PROJECT_REF}}"'
 
   db:push:
     desc: Apply generated Supabase migrations and seed data.
     cmds:
-      - "{{.BUN}} run db:push"
+      - "{{.SUPABASE}} db push --include-seed"
 
   db:types:
     desc: Generate Supabase TypeScript types.
     cmds:
-      - "{{.BUN}} run db:types"
+      - |
+        {{.BUN}} -e "const { mkdirSync } = require('node:fs'); mkdirSync('src/lib/supabase', { recursive: true })"
+      - '{{.SUPABASE}} gen types typescript --project-id "{{.SUPABASE_PROJECT_REF}}" > src/lib/supabase/database.types.ts'
 
   verify:
     desc: Run checks, typecheck, and unit tests.

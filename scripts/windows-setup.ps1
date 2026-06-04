@@ -119,7 +119,7 @@ if (-not (Select-String -Path $profilePath -Pattern 'mise activate pwsh' -Quiet)
 Write-Step "mise trust"
 Invoke-NativeCommand -Command "mise" -Arguments @("trust")
 
-Write-Step "mise install (node, bun, gh, prek, task)"
+Write-Step "mise install (node, bun, gh, prek, supabase, task)"
 Invoke-NativeCommand -Command "mise" -Arguments @("install")
 
 # --- 5. Project setup ----------------------------------------------------------

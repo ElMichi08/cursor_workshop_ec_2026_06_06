@@ -107,7 +107,7 @@ fi
 step "mise trust"
 "$MISE_BIN" trust
 
-step "mise install (node, bun, gh, prek, task)"
+step "mise install (node, bun, gh, prek, supabase, task)"
 "$MISE_BIN" install
 
 # --- 6. Project setup ----------------------------------------------------------
