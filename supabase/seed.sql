@@ -1,0 +1,1 @@
+-- MarketLab seed data (workshop tasks add sample markets here)
